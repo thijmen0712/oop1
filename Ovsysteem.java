@@ -16,6 +16,7 @@ public class Ovsysteem {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        OVChipkaart kaart = new OVChipkaart();  // Nieuwe OV-chipkaart aanmaken
         boolean bezig = true;
 
         while (bezig) {
@@ -23,9 +24,9 @@ public class Ovsysteem {
             int keuze = input.nextInt();
 
             switch (keuze) {
-                case 1 -> Paaltje.inchecken();  // Gebruik correcte hoofdletter
-                case 2 -> Paaltje.uitchecken();
-                case 3 -> Oplaadpunt.opwaarderen();
+                case 1 -> Paaltje.inchecken(kaart);
+                case 2 -> Paaltje.uitchecken(kaart);
+                case 3 -> Oplaadpunt.opwaarderen(kaart);
                 case 4 -> bezig = false;
                 default -> System.out.println("Geen geldige invoer, kies een nummer uit het menu.");
             }
